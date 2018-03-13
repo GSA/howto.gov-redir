@@ -7,13 +7,9 @@
     <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 
     <!-- Redirect =============== -->
+    <meta http-equiv="refresh" content="0; url={{ site.new_url | escape }}">
     <script type="text/javascript">
-      var g_url = 'https://digitalgov.gov/';
-      var current_url = window.location;
-      if ( current_url.href.indexOf(g_url) >= 0 ) {
-        var path = current_url.href.replace(g_url, "");
-        window.location.href = 'https://www.digitalgov.gov/' + path;
-      }
+      window.location.href = "{{ site.new_url | escape }}"
     </script>
 
   </head>
